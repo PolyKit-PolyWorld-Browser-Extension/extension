@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "PolyKit",
+  "short_name": "PolyKit",
+  "version": "1.0.0",
+  "description": "Retheme all of polyworld.games. Click the PolyKit toolbar icon to pick colors, presets, fonts and layout.",
+  "homepage_url": "https://polyworld.games/",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "polykit@polyworld.games",
+      "strict_min_version": "109.0"
+    }
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "PolyKit — customize PolyWorld",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://polyworld.games/*",
+        "*://*.polyworld.games/*"
+      ],
+      "js": [
+        "shared/presets.js",
+        "shared/theme.js",
+        "content/content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}
