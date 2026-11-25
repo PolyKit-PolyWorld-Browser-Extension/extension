@@ -1,6 +1,8 @@
 # PolyKit
 
-A Chrome + Firefox extension that rethemes all of [polyworld.games](https://polyworld.games/). Click the PolyKit icon in your browser toolbar to open the customization panel; changes apply to the open PolyWorld tab instantly.
+A Chrome + Firefox extension that rethemes all of [polyworld.games](https://polyworld.games/). Click the PolyKit icon in your browser toolbar to open the customization panel; changes apply to open PolyWorld tabs instantly.
+
+PolyKit is an unofficial, independent project and is not affiliated with or endorsed by PolyWorld.
 
 ## What you can change
 
@@ -46,5 +48,7 @@ Temporary add-ons are removed when Firefox restarts. For a permanent install, bu
 
 ## Notes
 
-- No background service worker or network requests: the extension only reads/writes its own settings and injects styles into PolyWorld pages.
-- Custom CSS is ordinary CSS and can override any PolyKit setting. Use the **Reset** button in the popup to start over.
+- No background service worker, remote code, analytics or network requests: the extension only reads/writes its own settings and injects styles into PolyWorld pages.
+- Permissions are limited to `storage` and access to `polyworld.games`; there is no `tabs` or `activeTab` permission. Open PolyWorld tabs pick up changes through storage events.
+- Custom CSS is local user input and can override any PolyKit setting. Use the **Reset** button in the popup to start over.
+- Store-ready listing copy and permission justifications are in `STORE_LISTING.md`.

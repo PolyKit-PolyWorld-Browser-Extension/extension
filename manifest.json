@@ -3,8 +3,7 @@
   "name": "PolyKit",
   "short_name": "PolyKit",
   "version": "1.0.0",
-  "description": "Retheme all of polyworld.games. Click the PolyKit toolbar icon to pick colors, presets, fonts and layout.",
-  "homepage_url": "https://polyworld.games/",
+  "description": "Unofficial PolyWorld theme tool. Click the toolbar icon to change colors, presets, fonts and layout on polyworld.games.",
   "browser_specific_settings": {
     "gecko": {
       "id": "polykit@polyworld.games",
@@ -12,9 +11,7 @@
     }
   },
   "permissions": [
-    "storage",
-    "tabs",
-    "activeTab"
+    "storage"
   ],
   "action": {
     "default_popup": "popup/popup.html",

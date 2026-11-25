@@ -100,30 +100,6 @@
     });
   }
 
-  function pushToTab() {
-    if (!ext.tabs || !ext.tabs.query) return;
-    ext.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      var tab = tabs && tabs[0];
-      if (!tab) return;
-
-      var onSite = false;
-      try {
-        onSite = /(^|\.)polyworld\.games$/i.test(new URL(tab.url || '').hostname);
-      } catch (e) {}
-
-      el('tabStatus').hidden = onSite;
-      if (!onSite) {
-        setStatus('Open PolyWorld to preview');
-        return;
-      }
-
-      ext.tabs.sendMessage(tab.id, { type: 'polykit:apply', settings: settings }, function () {
-        if (ext.runtime && ext.runtime.lastError) setStatus('Reload PolyWorld to preview');
-        else setStatus('Applied instantly');
-      });
-    });
-  }
-
   function persist(delay) {
     clearTimeout(saveTimer);
     setStatus('Saving…');
@@ -131,7 +107,7 @@
       var payload = {};
       payload[KEY] = settings;
       storage.set(payload, function () {
-        pushToTab();
+        setStatus('Saved — open PolyWorld tabs update');
       });
     }, typeof delay === 'number' ? delay : 160);
   }
@@ -235,7 +211,6 @@
     storage.get(KEY, function (data) {
       settings = PolyKit.normalizeSettings(data && data[KEY] ? data[KEY] : PolyKit.DEFAULT_SETTINGS);
       render();
-      pushToTab();
     });
   }
 

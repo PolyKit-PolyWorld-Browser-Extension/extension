@@ -207,17 +207,6 @@
       } catch (e) {}
     }
 
-    if (ext && ext.runtime && ext.runtime.onMessage) {
-      try {
-        ext.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-          if (message && message.type === 'polykit:apply') {
-            applyStored(message.settings);
-            if (typeof sendResponse === 'function') sendResponse({ ok: true });
-          }
-        });
-      } catch (e) {}
-    }
-
     if (mediaQuery) {
       var onThemeChange = function () {
         if (settings.enabled && settings.mode === 'system') applyStored(settings);

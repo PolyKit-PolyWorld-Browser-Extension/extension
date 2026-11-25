@@ -82,16 +82,6 @@ body {
   border-radius: 99px;
 }
 
-.pk-status {
-  margin: 10px 0 0;
-  padding: 8px 10px;
-  border: 1px solid #6b5b2a;
-  border-radius: 8px;
-  background: rgba(255, 190, 60, 0.1);
-  color: #ffd98a;
-  font-size: 12px;
-}
-
 .pk-section {
   padding: 12px 0;
   border-bottom: 1px solid var(--pk-ui-line);
