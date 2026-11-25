@@ -9,7 +9,8 @@ No submission can be guaranteed to be approved, but this package follows the rev
 - Version: `1.0.0`
 - Name: `PolyKit`
 - Firefox ID: `polykit@polyworld.games` (do not change after the first AMO release)
-- Firefox minimum version: `109.0`
+- Firefox minimum version: `140.0` (needed for the data-collection declaration)
+- Firefox data collection: `browser_specific_settings.gecko.data_collection_permissions.required = ["none"]`
 - Permissions: `storage` only
 - Host access: `polyworld.games` and its subdomains, via `content_scripts.matches`
 - Popup: `action.default_popup` → `popup/popup.html`
@@ -56,7 +57,7 @@ There is intentionally no `tabs` or `activeTab` permission. The popup writes set
 
 ## Privacy / data declarations
 
-- Data collection: **None**
+- Data collection: **None** (`required: ["none"]` in the Firefox manifest)
 - Data transmission: **None**
 - Remote code: **No**
 - Analytics or telemetry: **No**
