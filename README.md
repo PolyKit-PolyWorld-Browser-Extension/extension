@@ -21,7 +21,11 @@ PolyKit works on `polyworld.games` and its subdomains.
 2. Turn on **Developer mode**.
 3. Click **Load unpacked** and select this folder.
 4. Pin PolyKit from the extensions menu so the toolbar button is always visible.
+
+   
 MacBlue from Nov 26: its on the Chrome Web Store! yippie! https://chromewebstore.google.com/detail/polykit/apoonfiofnjpfhbhnlifcnkceegdlpge
+
+
 ## Install in Firefox
 
 1. Open `about:debugging#/runtime/this-firefox`.
